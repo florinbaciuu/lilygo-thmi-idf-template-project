@@ -43,6 +43,7 @@ cat .gitmodules                      # Afișează configurația direct
 ```
 git submodule deinit -f lib/ESP32_Resource_Monitor
 git rm -f lib/ESP32_Resource_Monitor
+git rm -f .git/modules/lib/ESP32_Resource_Monitor
 rm -rf .git/modules/lib/ESP32_Resource_Monitor
 git commit -m "Șters submodulul ESP32_Resource_Monitor"
 ```
@@ -99,7 +100,7 @@ git push
 ```
 git submodule deinit -f lib/ESP32_Resource_Monitor
 git rm -f lib/ESP32_Resource_Monitor
-rm -rf .git/modules/lib/ESP32_Resource_Monitor
+rm .git/modules/lib/ESP32_Resource_Monitor
 git commit -m "Șters submodulul buclucaș"
 ```
 
@@ -109,3 +110,4 @@ git submodule add https://github.com/florinbaciuu/ESP32_Resource_Monitor.git lib
 git commit -m "Adăugat din nou submodulul"
 git push
 ```
+cd 
