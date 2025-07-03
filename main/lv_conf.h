@@ -92,7 +92,7 @@
  *(Not so important, you can adjust it to modify default sizes and spaces)*/
 //#define LV_DPI_DEF 142     /*[px/inch]*/
 //#define LV_DPI_DEF 190
-#define LV_DPI_DEF 130
+#define LV_DPI_DEF 143
 /*=================
  * OPERATING SYSTEM
  *=================*/
@@ -142,7 +142,7 @@
  * and can't be drawn in chunks. */
 
 /*The target buffer size for simple layer chunks.*/
-#define LV_DRAW_LAYER_SIMPLE_BUF_SIZE    (24 * 1024)   /*[bytes]*/ //24
+#define LV_DRAW_LAYER_SIMPLE_BUF_SIZE    (64 * 1024)   /*[bytes]*/ //24 old
 
 /* Limit the max allocated memory for simple and transformed layers.
  * It should be at least `LV_DRAW_LAYER_SIMPLE_BUF_SIZE` sized but if transformed layers are also used
@@ -153,7 +153,7 @@
 /* The stack size of the drawing thread.
  * NOTE: If FreeType or ThorVG is enabled, it is recommended to set it to 32KB or more.
  */
-#define LV_DRAW_THREAD_STACK_SIZE    (8 * 1024)   /*[bytes]*/ // 8
+#define LV_DRAW_THREAD_STACK_SIZE    (12 * 1024)   /*[bytes]*/ // 8 old
 
 /** Thread priority of the drawing task.
  *  Higher values mean higher priority.
@@ -207,13 +207,13 @@
         /*Allow buffering some shadow calculation.
         *LV_DRAW_SW_SHADOW_CACHE_SIZE is the max. shadow size to buffer, where shadow size is `shadow_width + radius`
         *Caching has LV_DRAW_SW_SHADOW_CACHE_SIZE^2 RAM cost*/
-        #define LV_DRAW_SW_SHADOW_CACHE_SIZE 4 // 0
+        #define LV_DRAW_SW_SHADOW_CACHE_SIZE 16 // 0
 
         /* Set number of maximally cached circle data.
         * The circumference of 1/4 circle are saved for anti-aliasing
         * radius * 4 bytes are used per circle (the most often used radiuses are saved)
         * 0: to disable caching */
-        #define LV_DRAW_SW_CIRCLE_CACHE_SIZE 4
+        #define LV_DRAW_SW_CIRCLE_CACHE_SIZE 16 // 4
     #endif
 
     #define  LV_USE_DRAW_SW_ASM     LV_DRAW_SW_ASM_NONE
@@ -223,7 +223,7 @@
     #endif /* #if LV_USE_DRAW_SW_ASM == LV_DRAW_SW_ASM_CUSTOM */
 
     /* Enable drawing complex gradients in software: linear at an angle, radial or conical */
-    #define LV_USE_DRAW_SW_COMPLEX_GRADIENTS    0
+    #define LV_USE_DRAW_SW_COMPLEX_GRADIENTS    1
 #endif
 
 /*Use TSi's aka (Think Silicon) NemaGFX */
