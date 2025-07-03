@@ -1,0 +1,27 @@
+git config --global user.name "florinbaciuu"
+git config --global user.email "baciuaurelflorin@gmail.com
+git config --global init.defaultBranch main
+git config --global core.editor code  # sau vim/code/nano după preferință
+------------------------------------------------------
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/florinbaciuu/ESP32_Resource_Monitor.git
+git remote add origin https://github.com/florinbaciuu/lilygo-thmi-idf-template-project
+------------------------------------------------------
+
+git submodule add https://github.com/florinbaciuu/ESP32_Resource_Monitor.git lib/ESP32_Resource_Monitor
+------------------------------------------------------
+git push -u origin main
+git push --force origin main
+
+------------------------------------------------------
+git remote remove origin
+
+------------------------------------------------------
+
+git clone --recurse-submodules https://github.com/florinbaciuu/lilygo-thmi-idf-template-project
+git submodule status
+git submodule update --init --recursive
+------------------------------------------------------
