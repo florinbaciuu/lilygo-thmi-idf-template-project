@@ -1,1 +1,1 @@
-cd lib && git clone https://github.com/florinbaciuu/numele_librariei.git
+cd lib && git clone https://github.com/florinbaciuu/ESP32_Resource_Monitor.git
