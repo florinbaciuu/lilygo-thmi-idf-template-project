@@ -22,14 +22,33 @@ git remote add origin https://github.com/florinbaciuu/REPO.git    # Adaugă remo
 ```
 
 ---
-
+## 🔗 Adăugare, verificare și ștergere submodul Git (ex: o librărie în lib/)
 ## 🔗 Adăugare submodul Git (ex: o librărie în lib/)
+### ✅ Adăugare submodul
 
 ```
 git submodule add https://github.com/florinbaciuu/ESP32_Resource_Monitor.git lib/ESP32_Resource_Monitor
 ```
 
+### 🔍 Verificare submodule existente
+
+```
+git submodule status                  # Afișează commiturile și starea submodulelor
+git config -f .gitmodules --list     # Verifică ce submodule sunt înregistrate oficial
+cat .gitmodules                      # Afișează configurația direct
+```
+
+### ❌ Ștergere completă a unui submodul
+
+```
+git submodule deinit -f lib/ESP32_Resource_Monitor
+git rm -f lib/ESP32_Resource_Monitor
+rm -rf .git/modules/lib/ESP32_Resource_Monitor
+git commit -m "Șters submodulul ESP32_Resource_Monitor"
+```
+
 ---
+
 
 ## 🚀 Push către GitHub
 
