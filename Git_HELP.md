@@ -55,10 +55,15 @@ git commit -m "Șters submodulul ESP32_Resource_Monitor"
 
 ```
 git push -u origin main                                           # Push initial La primul push dintr-un proiect nou:
-git push --set-upstream origin main				  # Push initial La primul push dintr-un proiect nou:
-git branch -vv							  # Verifica ce upstream e
-git push 							  # Dupa ce ai pus "git push -u origin main"
+git push --set-upstream origin main				                  # Push initial La primul push dintr-un proiect nou:
+git branch -vv							                          # Verifica ce upstream e
+git push 							                              # Dupa ce ai pus "git push -u origin main"
 git push --force origin main                                      # Push cu forțare (atenție!)
+
+git fetch                                                         # Doar aduce modificările remote, nu le aplică local
+git pull                                                          # Fetch + Merge (sau Rebase) = trage și le bagă direct în branchul tău
+git clone                                                         # Fetch complet + creează repo nou local
+git push                                                          # Trimite schimbările tale către remote
 ```
 
 ---
