@@ -34,7 +34,10 @@ git submodule add https://github.com/florinbaciuu/ESP32_Resource_Monitor.git lib
 ## 🚀 Push către GitHub
 
 ```
-git push -u origin main                                           # Push inițial
+git push -u origin main                                           # Push initial La primul push dintr-un proiect nou:
+git push --set-upstream origin main				  # Push initial La primul push dintr-un proiect nou:
+git branch -vv							  # Verifica ce upstream e
+git push 							  # Dupa ce ai pus "git push -u origin main"
 git push --force origin main                                      # Push cu forțare (atenție!)
 ```
 
