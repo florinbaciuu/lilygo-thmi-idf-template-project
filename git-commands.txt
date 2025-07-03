@@ -25,3 +25,20 @@ git clone --recurse-submodules https://github.com/florinbaciuu/lilygo-thmi-idf-t
 git submodule status
 git submodule update --init --recursive
 ------------------------------------------------------
+
+------------------------------------------------------
+1. Forțezi submodulul să folosească ultima versiune
+cd lib/ESP32_Resource_Monitor
+git fetch
+git checkout main  # sau alt branch care există
+cd ../..
+git add lib/ESP32_Resource_Monitor
+git commit -m "Resetat submodulul la commit valid"
+git push
+------------------------------------------------------
+2. Ștergi complet submodulul și îl adaugi din nou, curat
+git submodule deinit -f lib/ESP32_Resource_Monitor
+git rm -f lib/ESP32_Resource_Monitor
+rm -rf .git/modules/lib/ESP32_Resource_Monitor
+git commit -m "Șters submodulul buclucaș"
+------------------------------------------------------
