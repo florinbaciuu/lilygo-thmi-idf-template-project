@@ -391,9 +391,7 @@ void lv_main_task(void *parameter) {
 }
 #endif  // (LV_TASK_NOTIFY_SIGNAL_MODE == USE_FREERTOS_TASK_NOTIF)
 
-/********************************************** */
-/*                   TASK                       */
-/********************************************** */
+
 
 /********************************************** */
 /*                   TASK                       */
@@ -424,7 +422,7 @@ void v_check_0_pin_state_task(void *parameter) {
   while (true) {
     xTaskNotifyWait(0x00, 0xFFFFFFFF, &notificationValue, portMAX_DELAY);
     if (notificationValue & 0x01) {
-      ESP_LOGW("REED", "Reed Switch ACTIVAT pe GPIO21!");
+      ESP_LOGW("BUTTON", "Button ACTIVAT pe GPIO0");
       //// Acțiune custom (PUNE COD AICI)
     }
     vTaskDelay(200);
